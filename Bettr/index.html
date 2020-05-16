@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Самоучитель по игре в Техасский Холдем</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/f4afbaa213.js" crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  
+  <!-- https://fontawesome.com/kits/f4afbaa213/use?welcome=yes -->
+  <!-- https://online-poker-na-dengi.com/veroyatnost-vyigrysha-v-pokere-shansy-i-ix-tablicy/ -->
+  <!-- https://poker.ru/veroyatnosti-v-pokere/ -->
+  <!-- https://poker-shkola.ru/kak-igrat/matematika-pokera -->
+  <style>
+  .table {
+    min-width: 400px;
+  	max-width: 400px;
+  	text-align: center;
+  }
+  .row {
+
+  }
+  .col {
+  	height: 30px;
+  	width: 30px;
+    font-size: 12px;
+  }
+  </style>
+</head>
+<body>
+    <div class="jumbotron text-center">
+	  <h1 id="main_title">Техасский Холдем</h1>
+	  <p>Интерактивный самоучитель по игре в Безлимитный Техасский Холдем для столов 6-max</p>
+	</div>
+<div class="container">
+	<h1>Префлоп</h1>
+  <div class="container">
+  	<h2>Стартовые руки</h2>
+      <p>В этой таблице отмечены стартовые карты, с которыми необходимо делать ставки.</p>
+      <!--
+    	.bg-primary - blue
+    	.bg-secondary - gray
+    	.bg-success - green
+    	.bg-danger - red
+    	.bg-warning - yellow
+    	.bg-info - cyan
+    	.bg-light - white
+    	.bg-dark - darkgray
+    	.bg-white - white
+      -->
+      <div class="table">
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold"> </div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">A</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">K</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">Q</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">J</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">T</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">9</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">8</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">7</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">6</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">5</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">4</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">3</div>
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">2</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">A</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">AA</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">AK</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">AQ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">AJ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">AT</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">A9</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">A8</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">A7</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">A6</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">A5</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">A4</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">A3</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">A2</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">K</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">KA</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">KK</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">KQ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">KJ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">KT</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">K9</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">K8</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">K7</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">K6</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">K5</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">K4</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">K3</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">K2</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">Q</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">QA</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">QK</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">QQ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">QJ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">QT</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">Q9</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">Q8</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">Q7</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">Q6</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">Q5</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">Q4</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">Q3</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">Q2</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">J</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">JA</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">JK</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">JQ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">JJ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">JT</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">J9</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">J8</div>
+    		<div class="col d-flex align-items-center justify-content-center">J7</div>
+    		<div class="col d-flex align-items-center justify-content-center">J6</div>
+    		<div class="col d-flex align-items-center justify-content-center">J5</div>
+    		<div class="col d-flex align-items-center justify-content-center">J4</div>
+    		<div class="col d-flex align-items-center justify-content-center">J3</div>
+    		<div class="col d-flex align-items-center justify-content-center">J2</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">T</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">TA</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">TK</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">TQ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">TJ</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">TT</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">T9</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">T8</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">T7</div>
+    		<div class="col d-flex align-items-center justify-content-center">T6</div>
+    		<div class="col d-flex align-items-center justify-content-center">T5</div>
+    		<div class="col d-flex align-items-center justify-content-center">T4</div>
+    		<div class="col d-flex align-items-center justify-content-center">T3</div>
+    		<div class="col d-flex align-items-center justify-content-center">T2</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">9</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">9A</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">9K</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">9Q</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">9J</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">9T</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">99</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">98</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">97</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">96</div>
+    		<div class="col d-flex align-items-center justify-content-center">95</div>
+    		<div class="col d-flex align-items-center justify-content-center">94</div>
+    		<div class="col d-flex align-items-center justify-content-center">93</div>
+    		<div class="col d-flex align-items-center justify-content-center">92</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">8</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">8A</div>
+    		<div class="col d-flex align-items-center justify-content-center">8K</div>
+    		<div class="col d-flex align-items-center justify-content-center">8Q</div>
+    		<div class="col d-flex align-items-center justify-content-center">8J</div>
+    		<div class="col d-flex align-items-center justify-content-center">8T</div>
+    		<div class="col d-flex align-items-center justify-content-center">89</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">88</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">87</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">86</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">85</div>
+    		<div class="col d-flex align-items-center justify-content-center">84</div>
+    		<div class="col d-flex align-items-center justify-content-center">83</div>
+    		<div class="col d-flex align-items-center justify-content-center">82</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">7</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">7A</div>
+    		<div class="col d-flex align-items-center justify-content-center">7K</div>
+    		<div class="col d-flex align-items-center justify-content-center">7Q</div>
+    		<div class="col d-flex align-items-center justify-content-center">7J</div>
+    		<div class="col d-flex align-items-center justify-content-center">7T</div>
+    		<div class="col d-flex align-items-center justify-content-center">79</div>
+    		<div class="col d-flex align-items-center justify-content-center">78</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">77</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">76</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">75</div>
+    		<div class="col d-flex align-items-center justify-content-center">74</div>
+    		<div class="col d-flex align-items-center justify-content-center">73</div>
+    		<div class="col d-flex align-items-center justify-content-center">72</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">6</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">6A</div>
+    		<div class="col d-flex align-items-center justify-content-center">6K</div>
+    		<div class="col d-flex align-items-center justify-content-center">6Q</div>
+    		<div class="col d-flex align-items-center justify-content-center">6J</div>
+    		<div class="col d-flex align-items-center justify-content-center">6T</div>
+    		<div class="col d-flex align-items-center justify-content-center">69</div>
+    		<div class="col d-flex align-items-center justify-content-center">68</div>
+    		<div class="col d-flex align-items-center justify-content-center">67</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">66</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">65</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">64</div>
+    		<div class="col d-flex align-items-center justify-content-center">63</div>
+    		<div class="col d-flex align-items-center justify-content-center">62</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">5</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">5A</div>
+    		<div class="col d-flex align-items-center justify-content-center">5K</div>
+    		<div class="col d-flex align-items-center justify-content-center">5Q</div>
+    		<div class="col d-flex align-items-center justify-content-center">5J</div>
+    		<div class="col d-flex align-items-center justify-content-center">5T</div>
+    		<div class="col d-flex align-items-center justify-content-center">59</div>
+    		<div class="col d-flex align-items-center justify-content-center">58</div>
+    		<div class="col d-flex align-items-center justify-content-center">57</div>
+    		<div class="col d-flex align-items-center justify-content-center">56</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">55</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">54</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">53</div>
+    		<div class="col d-flex align-items-center justify-content-center">52</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">4</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">4A</div>
+    		<div class="col d-flex align-items-center justify-content-center">4K</div>
+    		<div class="col d-flex align-items-center justify-content-center">4Q</div>
+    		<div class="col d-flex align-items-center justify-content-center">4J</div>
+    		<div class="col d-flex align-items-center justify-content-center">4T</div>
+    		<div class="col d-flex align-items-center justify-content-center">49</div>
+    		<div class="col d-flex align-items-center justify-content-center">48</div>
+    		<div class="col d-flex align-items-center justify-content-center">47</div>
+    		<div class="col d-flex align-items-center justify-content-center">46</div>
+    		<div class="col d-flex align-items-center justify-content-center">45</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">44</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">43</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">42</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">3</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">3A</div>
+    		<div class="col d-flex align-items-center justify-content-center">3K</div>
+    		<div class="col d-flex align-items-center justify-content-center">3Q</div>
+    		<div class="col d-flex align-items-center justify-content-center">3J</div>
+    		<div class="col d-flex align-items-center justify-content-center">3T</div>
+    		<div class="col d-flex align-items-center justify-content-center">39</div>
+    		<div class="col d-flex align-items-center justify-content-center">38</div>
+    		<div class="col d-flex align-items-center justify-content-center">37</div>
+    		<div class="col d-flex align-items-center justify-content-center">36</div>
+    		<div class="col d-flex align-items-center justify-content-center">35</div>
+    		<div class="col d-flex align-items-center justify-content-center">34</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">33</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">32</div>
+    	  </div>
+    	  <div class="row">
+    		<div class="col d-flex align-items-center justify-content-center font-weight-bold">2</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">2A</div>
+    		<div class="col d-flex align-items-center justify-content-center">2K</div>
+    		<div class="col d-flex align-items-center justify-content-center">2Q</div>
+    		<div class="col d-flex align-items-center justify-content-center">2J</div>
+    		<div class="col d-flex align-items-center justify-content-center">2T</div>
+    		<div class="col d-flex align-items-center justify-content-center">29</div>
+    		<div class="col d-flex align-items-center justify-content-center">28</div>
+    		<div class="col d-flex align-items-center justify-content-center">27</div>
+    		<div class="col d-flex align-items-center justify-content-center">26</div>
+    		<div class="col d-flex align-items-center justify-content-center">25</div>
+    		<div class="col d-flex align-items-center justify-content-center">24</div>
+    		<div class="col d-flex align-items-center justify-content-center">23</div>
+    		<div class="col d-flex align-items-center justify-content-center bg-success">22</div>
+    	  </div>
+    </div>
+
+
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
