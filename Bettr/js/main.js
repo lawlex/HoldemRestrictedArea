@@ -297,7 +297,17 @@ $(document).ready(function() {
         currentposition = index;
         $('#clickposition').removeClass('d-none');
           $('#choosenposition').text(value);
+
+          var p = heroesaction[positions[currentposition]];
+        
+          var c = p["c" + currenttypehand];
+          var a = c["a" + currentaction];
+          console.log(currentposition + ' - ' + currenttypehand + ' - ' + currentaction + ' - ' + a);
+          $('#preflopdecision').removeClass('alert-success d-none').addClass('alert-info display-4');
+          $('#preflopdecisiontext').text(a);
       });
+
+
     })
     $.each(hands, function(key, value) {
         $('#' + key).attr('title', getTypeTitle(value));
@@ -307,9 +317,17 @@ $(document).ready(function() {
           $('#clickhand').removeClass('d-none');
           currenttypehand = value;
           $('#choosenhand').text(key + ' - ' + getTypeTitle(value));
-          
+          var p = heroesaction[positions[currentposition]];
+        
+          var c = p["c" + currenttypehand];
+          var a = c["a" + currentaction];
+          console.log(currentposition + ' - ' + currenttypehand + ' - ' + currentaction + ' - ' + a);
+          $('#preflopdecision').removeClass('alert-success d-none').addClass('alert-info display-4');
+          $('#preflopdecisiontext').text(a);          
         });
         console.log('key: ' + key + ', value: ' + getTypeTitle(value));
+
+
     });
 
     $.each(actions, function(index, value){
@@ -326,13 +344,7 @@ $(document).ready(function() {
         $('#preflopdecisiontext').text(a);
       });
     });
-    var p = heroesaction[positions[currentposition]];
-        
-    var c = p["c" + currenttypehand];
-    var a = c["a" + currentaction];
-    console.log(currentposition + ' - ' + currenttypehand + ' - ' + currentaction + ' - ' + a);
-    $('#preflopdecision').removeClass('alert-success d-none').addClass('alert-info display-4');
-    $('#preflopdecisiontext').text(a);
+
 
 });
 /*
