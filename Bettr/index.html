@@ -81,36 +81,29 @@
     </nav>
     <div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
         <h1>Префлоп</h1>
-        <div class="container">
-            <h2>Позиция</h2>
-            <p>От позиции за столом зависят дальнейшие действия со стартовыми руками.</p>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-success active">
-                  <input type="radio" name="options" id="btnBB" autocomplete="off"> BB
-                </label>
-                <label class="btn btn-success">
-                  <input type="radio" name="options" id="btnSB" autocomplete="off"> SB
-                </label>
-                <label class="btn btn-success">
-                  <input type="radio" name="options" id="btnBTN" autocomplete="off"> BTN
-                </label>
-                <label class="btn btn-success">
-                    <input type="radio" name="options" id="btnCO" autocomplete="off"> CO
-                  </label>
-                  <label class="btn btn-success">
-                    <input type="radio" name="options" id="btnMP" autocomplete="off"> MP
-                  </label>
-                  <label class="btn btn-success">
-                    <input type="radio" name="options" id="btnUTG" autocomplete="off"> UTG
-                  </label>
-            </div>
-            <p></p>
-            <div id="clickposition"class="alert alert-success d-none">
-                <button id="btnclickpositionclose" type="button" class="close">&times;</button>
-                <strong>Ваша позиция:</strong> <span id="choosenposition"></span>
-            </div>
-            <p></p>
-            <h2>Стартовые руки</h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Количество игроков</h2>
+                <p>Количество игроков за столом - один из важнейших показателей для принятия решения во время игры.</p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success">
+                      <input type="radio" name="options" id="btn2players" autocomplete="off"> 2
+                    </label>
+                    <label class="btn btn-success">
+                      <input type="radio" name="options" id="btn3players" autocomplete="off"> 3
+                    </label>
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" id="btn4players" autocomplete="off"> 4
+                    </label>
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" id="btn5players" autocomplete="off"> 5
+                    </label>
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" id="btn6players" autocomplete="off" checked> 6
+                     </label>
+                </div>
+                <p></p>
+                <h2>Стартовые руки</h2>
             <p>В этой таблице собраны 169 комбинаций стартовых карт.</p>
             <!--
     	.bg-primary - blue
@@ -394,29 +387,60 @@
                 <strong>Ваши руки:</strong> <span id="choosenhand"></span>
                 
             </div>
-            <h2>Действия оппонентов</h2>
-            <p>В зависимости от позиции за столом, стартовых рук и действий оппонентов необходимо сделать одно из возможных действий: сбросить карты (фолд), ответить или уравнять ставку (колл), повысить ставку (рейз), пропустить (чек), повысить в ответ на повышение (ре-рейз, 3бет, 4бет).</p>
-            <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons" style="min-width: 25%;">
-                <label type="button" class="btn btn-success active btn-block">
-                    <input type="radio" name="options" id="btnActions1" autocomplete="off"> Все сбросились
-                  </label>
-                  <label type="button" class="btn btn-success btn-block">
-                    <input type="radio" name="options" id="btnActions2" autocomplete="off"> Был лимп (лимпы) </label>
-                  <label type="button" class="btn btn-success btn-block">
-                    <input type="radio" name="options" id="btnActions3" autocomplete="off"> Один рейз </label>
-                  <label type="button" class="btn btn-success btn-block">
-                      <input type="radio" name="options" id="btnActions4" autocomplete="off"> Один рейз и колл </label>
-                    <label type="button" class="btn btn-success btn-block">
-                      <input type="radio" name="options" id="btnActions5" autocomplete="off"> Был ре-рейз (3бет)</label>
-              </div>
-              <p></p>
-            <h2>Ваше действие</h2>
-            <p>Если ни одна из ситуаций не походит на вашу, то вам следует немедленно сбросить карты.</p>
-            <div id="preflopdecision" class="alert alert-success d-none">
-                <h2><strong>Ваше действие:</strong> <span id="preflopdecisiontext"></span></h2>
+            </div>
+            <div class="col-sm-6">
+                <h2>Позиция</h2>
+                <p>От позиции за столом зависят дальнейшие действия со стартовыми руками.</p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label id="btnBBlabel" class="btn btn-success active">
+                      <input type="radio" name="options" id="btnBB" autocomplete="off"> BB
+                    </label>
+                    <label id="btnSBlabel" class="btn btn-success">
+                      <input type="radio" name="options" id="btnSB" autocomplete="off"> SB
+                    </label>
+                    <label id="btnBTNlabel" class="btn btn-success">
+                      <input type="radio" name="options" id="btnBTN" autocomplete="off"> BTN
+                    </label>
+                    <label id="btnCOlabel" class="btn btn-success">
+                      <input type="radio" name="options" id="btnCO" autocomplete="off"> CO
+                    </label>
+                    <label id="btnMPlabel" class="btn btn-success">
+                      <input type="radio" name="options" id="btnMP" autocomplete="off"> MP
+                    </label>
+                    <label id="btnUTGlabel" class="btn btn-success">
+                      <input type="radio" name="options" id="btnUTG" autocomplete="off"> UTG
+                    </label>
+                </div>
+                <p></p>
+                <div id="clickposition"class="alert alert-success d-none">
+                    <button id="btnclickpositionclose" type="button" class="close">&times;</button>
+                    <strong>Ваша позиция:</strong> <span id="choosenposition"></span>
+                </div>
+                <p></p>
+                <h2>Действия оппонентов</h2>
+                <p>В зависимости от позиции за столом, стартовых рук и действий оппонентов необходимо сделать одно из возможных действий: сбросить карты (фолд), ответить или уравнять ставку (колл), повысить ставку (рейз), пропустить (чек), повысить в ответ на повышение (ре-рейз, 3бет, 4бет).</p>
+                <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons" style="min-width: 25%;">
+                    <label id="btnActions1label" type="button" class="btn btn-success btn-block disabled">
+                        <input type="radio" name="options" id="btnActions1" autocomplete="off"> Все сбросились </label>
+                    <label id="btnActions2label" type="button" class="btn btn-success btn-block disabled">
+                        <input type="radio" name="options" id="btnActions2" autocomplete="off"> Был лимп (лимпы) </label>
+                    <label id="btnActions3label" type="button" class="btn btn-success btn-block disabled">
+                        <input type="radio" name="options" id="btnActions3" autocomplete="off"> Один рейз </label>
+                    <label id="btnActions4label" type="button" class="btn btn-success btn-block disabled">
+                        <input type="radio" name="options" id="btnActions4" autocomplete="off"> Один рейз и колл </label>
+                    <label id="btnActions5label" type="button" class="btn btn-success btn-block disabled">
+                        <input type="radio" name="options" id="btnActions5" autocomplete="off"> Был ре-рейз (3бет) </label>
+                  </div>
+                  <p></p>
+                <h2>Ваше действие</h2>
+                <p>Если ни одна из ситуаций не походит на вашу, то вам следует немедленно сбросить карты.</p>
+                <div id="preflopdecision" class="alert alert-success d-none">
+                    <h2><strong>Ваше действие:</strong> <span id="preflopdecisiontext"></span></h2>
+                </div>
+
             </div>
         </div>
-
+ 
     </div>
     <div id="section2" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
         <h1>Флоп</h1>

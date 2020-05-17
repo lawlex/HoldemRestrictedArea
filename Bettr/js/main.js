@@ -4,7 +4,14 @@ $(document).ready(function() {
     var currentposition = 0; // 0 - BB
     var currenttypehand = 0; // 0 - Мусорные руки
     var currentaction = 1; // 1 - Все сбросились
-    
+    var countplayers = 6; // 6 игроков для столов 6-max
+    var players = [
+      '2',
+      '3',
+      '4',
+      '5',
+      '6'
+    ];
     var positions = [
       'BB',
       'SB',
@@ -286,6 +293,58 @@ $(document).ready(function() {
         "c0":{"a1":"Фолд","a2":"Фолд","a3":"Фолд","a4":"Фолд","a5":"Фолд"}
       }
     };
+
+    $.each(players, function(index, value) {
+      console.log('index: ' + index + ', value: ' + value);
+      $('#btn'+value+'players').click(
+        function() {
+          countplayers = index + 2;
+          //console.log(countplayers);
+          $.each(positions, function(n, value) {
+            if(n+1>countplayers){
+              $('#btn' + positions[n] + 'label').addClass('disabled');
+              //$('#btn'+positions[n]).attr('disabled','');
+            } else {
+              $('#btn' + positions[n] + 'label').removeClass('disabled');
+
+            }
+
+            var p = currentposition+1;
+            console.log(p);
+            if ( p == countplayers ) {
+              $('#btnActions' + 2 + 'label').addClass('disabled');
+              $('#btnActions' + 3 + 'label').addClass('disabled');
+              $('#btnActions' + 4 + 'label').addClass('disabled');
+              $('#btnActions' + 5 + 'label').addClass('disabled');
+            } else {
+              $('#btnActions' + 1 + 'label').removeClass('disabled');
+              $('#btnActions' + 2 + 'label').removeClass('disabled');
+              $('#btnActions' + 3 + 'label').removeClass('disabled');
+              $('#btnActions' + 4 + 'label').removeClass('disabled');
+              $('#btnActions' + 5 + 'label').removeClass('disabled');
+            }
+            
+            if ( p + 1 == countplayers ) {
+              $('#btnActions' + 1 + 'label').removeClass('disabled');
+              $('#btnActions' + 2 + 'label').removeClass('disabled');
+              $('#btnActions' + 3 + 'label').removeClass('disabled');
+              $('#btnActions' + 4 + 'label').addClass('disabled');
+              $('#btnActions' + 5 + 'label').addClass('disabled');
+            } else if (p > countplayers) {
+              console.log(p + ' - ' + countplayers);
+              $('#clickposition').addClass('d-none');
+              $('#preflopdecision').addClass('d-none');
+              $('#btnActions' + 1 + 'label').addClass('disabled');
+              $('#btnActions' + 2 + 'label').addClass('disabled');
+              $('#btnActions' + 3 + 'label').addClass('disabled');
+              $('#btnActions' + 4 + 'label').addClass('disabled');
+              $('#btnActions' + 5 + 'label').addClass('disabled');
+            }
+          });      
+        }
+      );
+    });
+
     $.each(types, function(index, value) {
         console.log('index: ' + index + ', value: ' + value);
     });
@@ -294,6 +353,34 @@ $(document).ready(function() {
     $.each(positions, function(index, value) {
       $('#btnclickpositionclose').click(function(){$('#clickposition').addClass('d-none');});
       $('#btn' + value).click(function(){
+        console.log('index: ' + index + ', countplayers: ' + countplayers);
+        var p = index + 1;
+        if ( p == countplayers ) {
+          $('#btnActions' + 1 + 'label').removeClass('disabled');
+          $('#btnActions' + 2 + 'label').addClass('disabled');
+          $('#btnActions' + 3 + 'label').addClass('disabled');
+          $('#btnActions' + 4 + 'label').addClass('disabled');
+          $('#btnActions' + 5 + 'label').addClass('disabled');
+        } else {
+          $('#btnActions' + 1 + 'label').removeClass('disabled');
+          $('#btnActions' + 2 + 'label').removeClass('disabled');
+          $('#btnActions' + 3 + 'label').removeClass('disabled');
+          $('#btnActions' + 4 + 'label').removeClass('disabled');
+          $('#btnActions' + 5 + 'label').removeClass('disabled');
+        }
+        
+        if ( p + 1 == countplayers ) {
+          $('#btnActions' + 1 + 'label').removeClass('disabled');
+          $('#btnActions' + 2 + 'label').removeClass('disabled');
+          $('#btnActions' + 3 + 'label').removeClass('disabled');
+          $('#btnActions' + 4 + 'label').addClass('disabled');
+          $('#btnActions' + 5 + 'label').addClass('disabled');
+        } else {
+
+        }
+
+
+
         currentposition = index;
         $('#clickposition').removeClass('d-none');
           $('#choosenposition').text(value);
